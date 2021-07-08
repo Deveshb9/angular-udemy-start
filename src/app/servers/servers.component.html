@@ -1,0 +1,18 @@
+<label>Server Name</label>
+<!-- <input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+We can make it more simple using directives -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+    <!-- two way binding -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+    Add server</button>
+<!-- property binding -->
+<!-- <p [innerText]="allowNewServer"></p>  string binding-->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p> 
+<app-server *ngFor="let server of servers"></app-server>
